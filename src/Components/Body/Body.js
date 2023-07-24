@@ -36,6 +36,12 @@ function Body() {
     console.log("filteredRestra", filteredRestra);
   }
 
+  function handleInputChange(event) {
+    const { value } = event.target;
+    setSearchText(value);
+    filteredRestaurant(value, restaurants);
+  }
+
   return (filteredRestra.length === 0) ? (<ShimmerRestro />) : (
     <>
       <div className='restrosearch'>
@@ -44,17 +50,9 @@ function Body() {
           <input
             placeholder='Search'
             value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
+            onChange={handleInputChange}
           />
         </div>
-        <button
-          className='Search'
-          onClick={() => filteredRestaurant(searchText, restaurants)}
-        >
-          Search
-        </button>
       </div>
 
       <div className='Body'>
