@@ -1,8 +1,8 @@
 import React from 'react';
 
 const cardStyle = {
-  width: '250px',
-  height: '200px',
+  width: '290px',
+  height: '240px',
   marginLeft: '40px',
   backgroundColor: '#f0f0f0', // Optional: Set a background color for the cards
   borderRadius: '8px', // Optional: Add border-radius to create rounded corners for the cards
@@ -17,13 +17,20 @@ const cardStyle = {
 };
 
 function ShimmerRestro() {
-  return (
+  return (<div>
     <div className='ShimmerRestrocarousel' style={{ display: 'flex', marginTop:'100px'}}>
       <div style={cardStyle}></div>
       <div style={cardStyle}></div>
       <div style={cardStyle}></div>
       <div style={cardStyle}></div>
     </div>
+        <div className='ShimmerRestrocarousel' style={{ display: 'flex', marginTop:'30px'}}>
+        <div style={cardStyle}></div>
+        <div style={cardStyle}></div>
+        <div style={cardStyle}></div>
+        <div style={cardStyle}></div>
+      </div>
+      </div>
   );
 }
 
