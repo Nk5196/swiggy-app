@@ -1,0 +1,15 @@
+.corousel {
+    height: 100px;
+     
+}
+
+.alice-carousel{
+    padding: 0px
+}
+.alice-carousel img {
+    /* Add your CSS styles for the images here */
+    width: 380px;
+    height: auto;
+    margin: 10px;
+    /* Any other styles you want to apply */
+  }
