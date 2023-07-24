@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { AiFillStar } from 'react-icons/ai';
+
 import "./Body.css";
+import ShimmerRestro from '../shimmer/ShimmerRestro';
 const imgUrl = 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/';
 
 
@@ -23,7 +25,7 @@ function Body() {
     }
   }
 
-  return (
+  return (restaurants.length === 0) ? (<ShimmerRestro/>) :(
     <>
       <h2 className='restroheading'>Restaurants with online food delivery </h2>
       <div className='Body'>
