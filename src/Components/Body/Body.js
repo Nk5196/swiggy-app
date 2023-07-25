@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { AiFillStar } from 'react-icons/ai';
-
+import Corousel from '../Corousel/Corousel'
 import "./Body.css";
 import ShimmerRestro from '../shimmer/ShimmerRestro';
+import { Link } from 'react-router-dom';
 
 const imgUrl = 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/';
 
@@ -42,8 +43,9 @@ function Body() {
     filteredRestaurant(value, restaurants);
   }
 
-  return (filteredRestra.length === 0) ? (<ShimmerRestro />) : (
+  return (
     <>
+       <Corousel/>
       <div className='restrosearch'>
         <h2 className='restroheading'>Restaurants with online food delivery</h2>
         <div>
@@ -54,10 +56,11 @@ function Body() {
           />
         </div>
       </div>
-
+      {(filteredRestra.length === 0) ? (<ShimmerRestro />) : (
       <div className='Body'>
         {filteredRestra.map((item, index) => {
           return (
+            <Link to={'/restra-detail/'+ item.info.id}>
             <div className="restrocard" key={index}>
               <img src={imgUrl + item.info.cloudinaryImageId} alt='restro Img' />
               <p className='restName'>{item.info.name}</p>
@@ -65,11 +68,13 @@ function Body() {
                 <AiFillStar />
                 <p>{item.info.avgRating}</p>
               </div>
-              <p>Paragraph 3</p>
+              <p>{item.info.areaName}</p>
             </div>
+            </Link>
           );
         })}
       </div>
+      )}
     </>
   );
 }

@@ -18,7 +18,7 @@ const cardStyle = {
 
 function Shimmer() {
   return (
-    <div className='shimmercarousel' style={{ display: 'flex' }}>
+    <div className='shimmercarousel' style={{ display: 'flex' , marginBottom:'100px'}}>
       <div style={cardStyle}></div>
       <div style={cardStyle}></div>
       <div style={cardStyle}></div>
