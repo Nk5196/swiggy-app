@@ -18,13 +18,13 @@ const cardStyle = {
 
 function ShimmerRestro() {
   return (<div>
-    <div className='ShimmerRestrocarousel' style={{ display: 'flex', marginTop:'100px'}}>
+    <div className='ShimmerRestrocarousel' style={{ display: 'flex', marginTop:'20px'}}>
       <div style={cardStyle}></div>
       <div style={cardStyle}></div>
       <div style={cardStyle}></div>
       <div style={cardStyle}></div>
     </div>
-        <div className='ShimmerRestrocarousel' style={{ display: 'flex', marginTop:'30px'}}>
+        <div className='ShimmerRestrocarousel' style={{ display: 'flex', marginTop:'20px'}}>
         <div style={cardStyle}></div>
         <div style={cardStyle}></div>
         <div style={cardStyle}></div>

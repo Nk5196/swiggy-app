@@ -42,7 +42,7 @@ function Body() {
     filteredRestaurant(value, restaurants);
   }
 
-  return (filteredRestra.length === 0) ? (<ShimmerRestro />) : (
+  return (
     <>
       <div className='restrosearch'>
         <h2 className='restroheading'>Restaurants with online food delivery</h2>
@@ -54,7 +54,7 @@ function Body() {
           />
         </div>
       </div>
-
+      {(filteredRestra.length === 0) ? (<ShimmerRestro />) : (
       <div className='Body'>
         {filteredRestra.map((item, index) => {
           return (
@@ -70,6 +70,7 @@ function Body() {
           );
         })}
       </div>
+      )}
     </>
   );
 }
