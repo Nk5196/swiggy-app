@@ -15,6 +15,8 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow for a card-like appearance */
     display: flex;
     justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    border-radius: 5px;
     align-items: center;
     font-size: 24px; /* Optional: Adjust font size for the content inside the cards */
     font-weight: bold; /* Optional: Adjust font weight for the content inside the cards */

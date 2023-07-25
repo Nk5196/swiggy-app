@@ -40,6 +40,9 @@
   .Navbar li {
     margin-left: 10px;
     cursor: pointer;
+    margin: 10px;
+    color: #f5851f;
+
   }
   
   .Navbar li:first-child {
