@@ -4,6 +4,8 @@ import Corousel from '../Corousel/Corousel'
 import "./Body.css";
 import ShimmerRestro from '../shimmer/ShimmerRestro';
 import { Link } from 'react-router-dom';
+import useOnline from '../../Utils/useOnline';
+
 
 const imgUrl = 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/';
 
@@ -16,9 +18,11 @@ function Body() {
     getRestaurants();
   }, []);
 
+  
+
   async function getRestaurants() {
     try {
-      const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
+      const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4591284&lng=73.8777412&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
       const data = await response.json();
       console.log("data", data.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
       const restaurantsData = data.data.cards[2].card.card.gridElements.infoWithStyle.restaurants || [];
@@ -43,11 +47,14 @@ function Body() {
     filteredRestaurant(value, restaurants);
   }
 
-  return (
+  const offline = useOnline()
+  if (offline== false) return <h3>Oops... Check your Internet</h3>;
+
+  return   (
     <>
        <Corousel/>
       <div className='restrosearch'>
-        <h2 className='restroheading'>Restaurants with online food delivery</h2>
+        <h2 className='text-4xl'>Restaurants with online food delivery</h2>
         <div>
           <input
             placeholder='Search'
@@ -63,7 +70,7 @@ function Body() {
             <Link to={'/restra-detail/'+ item.info.id}>
             <div className="restrocard" key={index}>
               <img src={imgUrl + item.info.cloudinaryImageId} alt='restro Img' />
-              <p className='restName'>{item.info.name}</p>
+              <p className="truncate ...">{item.info.name}</p>
               <div className="rating-container">
                 <AiFillStar />
                 <p>{item.info.avgRating}</p>
