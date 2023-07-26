@@ -54,7 +54,7 @@ function Body() {
     <>
        <Corousel/>
       <div className='restrosearch'>
-        <h2 className='restroheading'>Restaurants with online food delivery</h2>
+        <h2 className='text-4xl'>Restaurants with online food delivery</h2>
         <div>
           <input
             placeholder='Search'
@@ -70,7 +70,7 @@ function Body() {
             <Link to={'/restra-detail/'+ item.info.id}>
             <div className="restrocard" key={index}>
               <img src={imgUrl + item.info.cloudinaryImageId} alt='restro Img' />
-              <p className='restName'>{item.info.name}</p>
+              <p className="truncate ...">{item.info.name}</p>
               <div className="rating-container">
                 <AiFillStar />
                 <p>{item.info.avgRating}</p>
